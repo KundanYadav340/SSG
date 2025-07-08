@@ -103,7 +103,7 @@ function App() {
     console.log("Form submitted successfully!");
   };
   return (
-    <div className="App">
+    <div className="">
       <Navbar />
       <div
         style={{
@@ -112,19 +112,22 @@ function App() {
       >
         <div
           style={{
-            height: "calc(100vh - 96px)",
+            height: "calc(100vh - 96px - 96px)",
             display: "flex",
             justifyContent: "center",
             paddingTop: "48px",
+            backgroundColor: "#efefef",
           }}
         >
           <div
             style={{
-              border: "1px solid #303030",
+              border: "1px solid #606060",
               padding: "32px",
               borderRadius: "16px",
               height: "fit-content",
               width: "480px",
+              backgroundColor: "#fff",
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.3)",
             }}
           >
             <div
