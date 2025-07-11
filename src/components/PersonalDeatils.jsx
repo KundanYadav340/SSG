@@ -6,20 +6,20 @@ const inputs = [
   {
     label: "Full Name",
     type: "text",
-    name: "UserName",
+    name: "userName",
   },
   {
     label: "Email",
     type: "email",
-    name: "email",
+    name: "userEmail",
   },
   {
     label: "Phone Number",
     type: "number",
-    name: "phone",
+    name: "userPhone",
   },
 ];
-const PersonalDeatils = ({ setTab, details, setDtails, error }) => {
+const PersonalDeatils = ({ details, setDtails, error }) => {
   const changeDeatilsHandler = (name, value) => {
     setDtails({ ...details, [name]: value });
   };
@@ -36,7 +36,7 @@ const PersonalDeatils = ({ setTab, details, setDtails, error }) => {
       }}
     >
       <FormHeading
-        heading={"Step1 : Personal details"}
+        heading={"Step 1 : Personal Details"}
         subHeading={"Lets start with basic"}
       />
       <div
@@ -44,22 +44,40 @@ const PersonalDeatils = ({ setTab, details, setDtails, error }) => {
           display: "flex",
           flexDirection: "column",
           gap: "16px",
+          marginBottom: "16px",
         }}
       >
-        {inputs.map((input) => (
-          <InputWithLabel
-            key={input.name}
-            label={input.label}
-            type={input.type}
-            name={input.name}
-            value={details[input.name]}
-            changeHandler={changeDeatilsHandler}
-            error={error}
-          />
-        ))}
+        <PersonalDeatilsInputs
+          details={details}
+          setDtails={setDtails}
+          error={error}
+          changeDeatilsHandler={changeDeatilsHandler}
+        />
       </div>
     </div>
   );
 };
 
 export default PersonalDeatils;
+
+export const PersonalDeatilsInputs = ({
+  details,
+  error,
+  changeDeatilsHandler,
+}) => {
+  return (
+    <>
+      {inputs.map((input) => (
+        <InputWithLabel
+          key={input.name}
+          label={input.label}
+          type={input.type}
+          name={input.name}
+          value={details[input.name]}
+          changeHandler={changeDeatilsHandler}
+          error={error}
+        />
+      ))}
+    </>
+  );
+};

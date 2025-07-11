@@ -3,7 +3,15 @@ import React from "react";
 const InputWithLabel = ({ label, type, name, value, changeHandler, error }) => {
   return (
     <div>
-      <div>{label}</div>
+      <div
+        style={{
+          fontSize: "14px",
+          fontFamily: "Inter, sans-serif",
+          color: "#475569",
+        }}
+      >
+        {label}
+      </div>
       {error.type === name && (
         <div
           style={{
@@ -16,12 +24,14 @@ const InputWithLabel = ({ label, type, name, value, changeHandler, error }) => {
       )}
       <input
         style={{
-          width: "360px",
+          width: "100%",
           borderRadius: "8px",
-          padding: "8px",
+          padding: "10px 12px",
           outline: "none",
-          border: "1px solid #303030",
-          marginTop: "8px",
+          border: "1px solid #cbd5e1",
+          fontSize: "16px",
+          marginTop: "4px",
+          boxSizing: "border-box",
         }}
         type={type}
         value={value}

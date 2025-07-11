@@ -6,9 +6,10 @@ const BottomBBar = () => {
       style={{
         textAlign: "center",
         height: "48px",
-        borderTop: "1px solid #303030",
+        borderTop: "1px solid #dedede",
         padding: "16px",
         boxSizing: "border-box",
+        backgroundColor: "#f4f4f4",
       }}
     >
       © 2024 EasyKey Inc. All rights reserved.

@@ -8,12 +8,12 @@ const inputs = [
   {
     label: "Account Number",
     type: "number",
-    name: "accountNumber",
+    name: "bankAccountNumber",
   },
   {
     label: "Ifsc",
     type: "text",
-    name: "ifsc",
+    name: "bankIfsc",
   },
 ];
 const BankDeatils = ({
@@ -56,20 +56,38 @@ const BankDeatils = ({
           marginBottom: "16px",
         }}
       >
-        {inputs.map((input) => (
-          <InputWithLabel
-            key={input.name}
-            label={input.label}
-            type={input.type}
-            name={input.name}
-            value={bankDeatils[input.name]}
-            changeHandler={changeBankDetailsHandler}
-            error={error}
-          />
-        ))}
+        <BankDeatilsInputs
+          bankDeatils={bankDeatils}
+          setBankDtails={setBankDtails}
+          error={error}
+          changeBankDetailsHandler={changeBankDetailsHandler}
+        />
       </div>
     </div>
   );
 };
 
 export default BankDeatils;
+
+export const BankDeatilsInputs = ({
+  bankDeatils,
+  setBankDtails,
+  error,
+  changeBankDetailsHandler,
+}) => {
+  return (
+    <>
+      {inputs.map((input) => (
+        <InputWithLabel
+          key={input.name}
+          label={input.label}
+          type={input.type}
+          name={input.name}
+          value={bankDeatils[input.name]}
+          changeHandler={changeBankDetailsHandler}
+          error={error}
+        />
+      ))}
+    </>
+  );
+};

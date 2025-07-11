@@ -19,12 +19,16 @@ const FormBottomButtons = ({
         {(tab === "bank" || tab === "final") && (
           <button
             onClick={clickPreviousHandler}
+            className="form-btns"
             style={{
-              padding: "8px 16px",
+              padding: "10px 24px",
+              fontFamily: "Inter, sans-serif",
               color: "#303030",
               border: "none",
               borderRadius: "4px",
               cursor: "pointer",
+              fontWeight: "bold",
+              fontSize: "16px",
             }}
           >
             Previous
@@ -35,13 +39,17 @@ const FormBottomButtons = ({
         {(tab === "details" || tab === "bank") && (
           <button
             onClick={clickNextHandler}
+            className="form-btns"
             style={{
-              padding: "8px 16px",
-              backgroundColor: "#1212ff",
+              padding: "10px 24px",
+              fontFamily: "Inter, sans-serif",
+              backgroundColor: "#2563EB",
               color: "white",
               border: "none",
+              fontWeight: "bold",
               borderRadius: "4px",
               cursor: "pointer",
+              fontSize: "16px",
             }}
           >
             Next
@@ -50,12 +58,16 @@ const FormBottomButtons = ({
         {tab === "final" && (
           <button
             onClick={clickSubmitHandler}
+            className="form-btns"
             style={{
-              padding: "8px 16px",
-              backgroundColor: "#125012",
+              padding: "10px 24px",
+              fontFamily: "Inter, sans-serif",
+              backgroundColor: "#16a34a",
               color: "white",
               border: "none",
               borderRadius: "4px",
+              fontSize: "16px",
+              fontWeight: "bold",
               cursor: "pointer",
             }}
           >

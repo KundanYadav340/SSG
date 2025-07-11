@@ -5,14 +5,24 @@ const FormHeading = ({ heading, subHeading }) => {
     <div>
       <div
         style={{
-          fontSize: "22px",
-          color: "blue",
+          fontSize: "24px",
+          color: "#1e293b",
           fontWeight: "bold",
+          fontFamily: "Inter, sans-serif",
         }}
       >
         {heading}
       </div>
-      <div>{subHeading}</div>
+      <div
+        style={{
+          color: "#475569",
+          fontSize: "16px",
+          fontFamily: "Inter, sans-serif",
+          marginTop: "8px",
+        }}
+      >
+        {subHeading}
+      </div>
     </div>
   );
 };

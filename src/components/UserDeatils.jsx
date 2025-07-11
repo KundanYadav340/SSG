@@ -20,39 +20,16 @@ const UserDeatils = ({ bankDeatils, details }) => {
             marginTop: "32px",
           }}
         >
-          <Dropdown label={"Personal details"}>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "16px",
-              }}
-            >
-              {Object.keys(details).map((key) => (
-                <DataChip key={key} label={key} value={details[key]} />
-              ))}
-            </div>
-          </Dropdown>
+          <PersonalDetailsAccordian details={details} />
         </div>
         <div
           style={{
             width: "100%",
-            marginTop: "32px",
+            marginTop: "16px",
+            marginBottom: "32px",
           }}
         >
-          <Dropdown label={"Bank details"}>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "16px",
-              }}
-            >
-              {Object.keys(bankDeatils).map((key) => (
-                <DataChip key={key} label={key} value={bankDeatils[key]} />
-              ))}
-            </div>
-          </Dropdown>
+          <BankDetailsAccordian bankDeatils={bankDeatils} />
         </div>
       </div>
     </div>
@@ -72,5 +49,41 @@ export const DataChip = ({ label, value }) => {
       <br />
       <span>{value}</span>
     </div>
+  );
+};
+
+export const PersonalDetailsAccordian = ({ details }) => {
+  return (
+    <Dropdown label={"Personal details"}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "16px",
+        }}
+      >
+        {Object.keys(details).map((key) => (
+          <DataChip key={key} label={key} value={details[key]} />
+        ))}
+      </div>
+    </Dropdown>
+  );
+};
+
+export const BankDetailsAccordian = ({ bankDeatils }) => {
+  return (
+    <Dropdown label={"Bank details"}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "16px",
+        }}
+      >
+        {Object.keys(bankDeatils).map((key) => (
+          <DataChip key={key} label={key} value={bankDeatils[key]} />
+        ))}
+      </div>
+    </Dropdown>
   );
 };
